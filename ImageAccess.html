@@ -1,0 +1,2258 @@
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+</style>
+</head>
+
+<body lang=PT-BR link=blue vlink=blue style='tab-interval:35.45pt'>
+
+<div class=Section1>
+
+<h2>Classe <span class=SpellE><span class=GramE>ImageAccess</span></span><o:p></o:p></h2>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>java</span></span>.<span class=SpellE><span class=GramE>lang</span></span>.<span
+class=SpellE>Object</span>|+ - - <b><span style='mso-spacerun:yes'> </span><span
+class=SpellE><span class=GramE>ImageAccess</span></span> </b><o:p></o:p></pre>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<p class=MsoNormal><span class=GramE>classe</span> pública <span class=SpellE><b>ImageAccess</b></span><b>
+</b><o:p></o:p></p>
+
+<p class=MsoNormal><span class=GramE>estende</span> <span class=SpellE>java</span>.<span
+class=SpellE><span class=GramE>lang</span></span>.<span class=SpellE>Object</span><o:p></o:p></p>
+
+<p><span class=SpellE><span class=GramE>ImageAccess</span></span> é uma camada
+da relação para facilitar o acesso aos <span class=SpellE>pixels</span> das
+imagens de <span class=SpellE>ImageJ</span>. Os métodos de <span class=SpellE><span
+class=GramE>ImageAccess</span></span> fornecem uma maneira fácil e robusta de
+acesso aos <span class=SpellE>pixels</span> das imagens. Os dados são
+armazenados em formato <span class=SpellE>double</span>. Muitos métodos <span
+class=SpellE>get/put</span> são disponíveis para acessar os dados. Se houver uma
+tentativa do usuário de acessar fora da imagem, as condições de contorno de simetria
+especular serão aplicadas. <o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td colspan=2 style='background:#CCCCFF;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><!-- ======== INNER CLASS SUMMARY ======== --><!-- =========== FIELD SUMMARY =========== --><a
+  name="field_summary"><!-- --></a><b><span style='font-size:18.0pt'>Sumário de
+  <span class=GramE>Campos </span></span></b><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><span
+  class=GramE><code><span style='font-size:10.0pt'>static</span></code></span></span><code><span
+  style='font-size:10.0pt'>&nbsp;int</span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23PATTERN_CROSS_3x3&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>PATTERN_CROSS_3x3</span> </a></span></b></code><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><span
+  class=GramE><code><span style='font-size:10.0pt'>static</span></code></span></span><code><span
+  style='font-size:10.0pt'>&nbsp;int</span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23PATTERN_SQUARE_3x3&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>PATTERN_SQUARE_3x3</span> </a></span></b></code><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp; <!-- ======== CONSTRUCTOR SUMMARY ======== --><a
+name="constructor_summary"><!-- --></a><o:p></o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td colspan=2 style='background:#CCCCFF;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><b><span style='font-size:18.0pt'>Sumário de <span
+  class=GramE>Construtores </span></span></b><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23ImageAccess(ij.process.ColorProcessor,%2520int)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>ij</span>.<span class=SpellE>process</span>.<span
+  class=SpellE>ColorProcessor</span> PC, <span class=SpellE>colorPlane</span> int)</span></code><br>
+  Cria um objeto novo da classe <span class=SpellE>ImageAccess</span> de um
+  objeto de <span class=SpellE>ColorProcessor</span>.<o:p></o:p></p>
+  </td>
+  <td style='border:none;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23ImageAccess(double%255B%255D%255B%255D)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>double</span>[][] <span
+  class=SpellE>array</span>)</span></code><br>
+  Cria um objeto novo de <span class=SpellE>ImageAccess</span> de uma 2D
+  disposição do <span class=SpellE>double</span> dos <span class=SpellE>pixels</span>.<o:p></o:p></p>
+  </td>
+  <td style='border:none;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23ImageAccess(ij.process.ImageProcessor)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>ij</span>.<span class=SpellE>process</span>.<span
+  class=SpellE>ImageProcessor</span> <span class=SpellE>ip</span>)</span></code><br>
+  Cria um objeto novo da classe <span class=SpellE>ImageAccess</span> de um
+  objeto de <span class=SpellE>ImageProcessor</span>.<o:p></o:p></p>
+  </td>
+  <td style='border:none;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;mso-yfti-lastrow:yes'>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23ImageAccess(int,%2520int)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>nx</span> int, ny int)</span></code><br>
+  <span class=SpellE>Cría</span> um objeto novo da classe <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+  <td style='border:none;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp; <!-- ========== METHOD SUMMARY =========== --><a name="method_summary"><!-- --></a><o:p></o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td colspan=2 style='background:#CCCCFF;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><b><span style='font-size:18.0pt'>Sumário de <span
+  class=GramE>Métodos </span></span></b><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23abs()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>abs</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>()</span></code><br>
+  Computa o valor absoluto.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23add(double)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>add</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>(<span class=SpellE>doubleconstant</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  adicionar uma constante a cada <span class=SpellE>pixel</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23add(ImageAccess,%2520ImageAccess)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>add</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>(<a
+  href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span></a> <span class=SpellE>im1</span>, <a
+  href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span></a> <span class=SpellE>im2</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  adicionar dois objetos de <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><span
+  class=GramE><code><span style='font-size:10.0pt'>ij</span></code></span></span><code><span
+  style='font-size:10.0pt'>.<span class=SpellE><span class=GramE>process</span></span>.<span
+  class=SpellE><span class=GramE>ByteProcessor</span></span></span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23createByteProcessor()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>createByteProcessor</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Cria um <span class=SpellE>ByteProcessor</span> dos dados do <span
+  class=SpellE>pixel</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><span
+  class=GramE><code><span style='font-size:10.0pt'>ij</span></code></span></span><code><span
+  style='font-size:10.0pt'>.<span class=SpellE><span class=GramE>process</span></span>.<span
+  class=SpellE><span class=GramE>FloatProcessor</span></span></span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23createFloatProcessor()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>createFloatProcessor</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Cria um <span class=SpellE>FloatProcessor</span> dos dados do <span
+  class=SpellE>pixel</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23divide(double)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D">divide</a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>double</span> <span
+  class=SpellE>constant</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  dividir uma constante a cada <span class=SpellE>pixel</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23divide(ImageAccess,%2520ImageAccess)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D">divide</a></span></b></code><code><span
+  style='font-size:10.0pt'>(<a
+  href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D">
+  <span class=SpellE>ImageAccess</span></a> <span class=SpellE>im1</span>, <a
+  href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span></a> <span class=SpellE>im2</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  dividir dois objetos de <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><code><span
+  style='font-size:10.0pt'><a
+  href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>ImageAccess</span> </a></span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23duplicate()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>duplicate</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Cria um objeto novo de <span class=SpellE>ImageAccess</span> pela duplicação
+  da corrente o objeto de <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><span
+  class=GramE><code><span style='font-size:10.0pt'>double</span></code></span></span><code><span
+  style='font-size:10.0pt'>[][]</span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getArrayPixels()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getArrayPixels</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Retorna uma cópia dos dados do <span class=SpellE>pixel</span> organizados em
+  um arranjo 2D.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#getColumn(int, double[])"><span
+  class=SpellE>getColumn</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(int&nbsp;x, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>column</span>)</span></code> </p>
+  <p class=MsoNormal>Um objeto <span class=SpellE><span class=GramE>ImageAccess</span></span>
+  chama este método para acessar uma coluna inteira da imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#getColumn(int, int, double[])"><span
+  class=SpellE>getColumn</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(int&nbsp;x, int&nbsp;y, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>column</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para acessar
+  uma parte da coluna.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><code><span
+  style='font-size:10.0pt'>int</span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getHeight()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getHeight</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Retorne a altura da imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>double</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getInterpolatedPixel(double,%2520double)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getInterpolatedPixel</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>double</span> x, <span
+  class=SpellE>double</span> y)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para acessar
+  o nível cinzento de um <span class=SpellE>pixel</span> selecionado usando um <span
+  class=SpellE>interpolation</span> <span class=SpellE>bilinear</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>double</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getMaximum()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getMaximum</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Retorne o valor máximo de <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>double</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getMean()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getMean</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Retorne o valor médio de <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>double</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getMinimum()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getMinimum</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Retorne o valor mínimo de <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#getNeighborhood(int, int, double[][])"><span
+  class=SpellE>getNeighborhood</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(int&nbsp;x, int&nbsp;y, <span class=SpellE>double</span>[][]&nbsp;<span
+  class=SpellE>neigh</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para acessar
+  a uma vizinhança em torno de uma posição de <span class=SpellE>pixel</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#getPattern(int, int, double[], int)"><span
+  class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>getPattern</span></span></a></span></b></code><code><span
+  lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(<span
+  class=SpellE>int</span>&nbsp;x, <span class=SpellE>int</span>&nbsp;y,
+  double[]&nbsp;neigh, <span class=SpellE>int</span>&nbsp;pattern)</span></code><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>double</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getPixel(int,%2520int)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getPixel</span> </a></span></b></code><code><span
+  style='font-size:10.0pt'>(int x, int y) </span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para acessar
+  o nível cinzento de um <span class=SpellE>pixel</span> selecionado.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><span
+  class=GramE><code><span style='font-size:10.0pt'>double</span></code></span></span><code><span
+  style='font-size:10.0pt'>[]</span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getPixels()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getPixels</span> </a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Retorna uma referência aos dados do <span class=SpellE>pixel</span> no <span
+  class=SpellE>double</span> (1D).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#getRow(int, double[])"><span
+  class=SpellE>getRow</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>(int&nbsp;y, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>row</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para acessar
+  uma linha inteira da imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#getRow(int, int, double[])"><span
+  class=SpellE>getRow</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>(int&nbsp;x, int&nbsp;y, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>row</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para acessar
+  uma parte da linha.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#getSubImage(int, int, ImageAccess)"><span
+  class=SpellE>getSubImage</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(int&nbsp;x, int&nbsp;y, <a
+  href="ImageAccess.html"><span
+  class=SpellE>ImageAccess</span></a>&nbsp;output)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para acessar
+  uma sub-imagem com o canto esquerdo superior na coordenada (x,y).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:24'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><code><span
+  style='font-size:10.0pt'>int</span></code><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23getWidth()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>getWidth</span> </a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  Retorna a largura da imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:25'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#multiply(double)"><span
+  class=SpellE>multiply</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>double</span>&nbsp;<span
+  class=SpellE>constant</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  multiplicar uma constante a cada <span class=SpellE>pixel</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:26'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#multiply(ImageAccess, ImageAccess)"><span
+  class=SpellE>multiply</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<a
+  href="ImageAccess.html"><span
+  class=SpellE>ImageAccess</span></a>&nbsp;<span class=SpellE>im1</span>, <a
+  href="ImageAccess.html"><span
+  class=SpellE>ImageAccess</span></a>&nbsp;<span class=SpellE>im2</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  multiplicar dois objetos de <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:27'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23normalizeContrast()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>normalizeContrast</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>()</span></code><br>
+  ”Estica” o contraste dentro de uma imagem de modo que os níveis cinzentos
+  estejam na escala 0 a 255.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:28'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#pow(double)"><span
+  class=SpellE>pow</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>(<span class=SpellE>double</span>&nbsp;a)</span></code><br>
+  Eleva um objeto de <span class=SpellE>ImageAccess</span> à potência a.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:29'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#putArrayPixels(double[][])"><span
+  class=SpellE>putArrayPixels</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>double</span>[][]&nbsp;<span
+  class=SpellE>array</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  colocar um arranjo 2D de <span class=SpellE>double</span> em um <span
+  class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:30'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#putColumn(int, double[])"><span
+  class=SpellE>putColumn</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(int&nbsp;x, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>column</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para pôr
+  uma coluna inteira em uma posição especificada na imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:31'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#putColumn(int, int, double[])"><span
+  class=SpellE>putColumn</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(int&nbsp;x, int&nbsp;y, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>column</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para pôr
+  uma parte da coluna na imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:32'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23putPixel(int,%2520int,%2520double)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>putPixel</span> </a></span></b></code><code><span
+  style='font-size:10.0pt'>(int x, int y, <span class=SpellE>double</span> <span
+  class=SpellE>value</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método em ordem
+  um valor do nível de cinza a ser posto para dentro de uma posição dada pelas
+  coordenadas.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:33'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#putRow(int, double[])"><span
+  class=SpellE>putRow</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>(int&nbsp;y, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>row</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para pôr
+  uma linha inteira em uma posição especificada na imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:34'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#putRow(int, int, double[])"><span
+  class=SpellE>putRow</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>(int&nbsp;x, int&nbsp;y, <span class=SpellE>double</span>[]&nbsp;<span
+  class=SpellE>row</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para pôr
+  uma parte da linha na imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:35'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#putSubImage(int, int, ImageAccess)"><span
+  class=SpellE>putSubImage</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(int&nbsp;x, int&nbsp;y, <a
+  href="ImageAccess.html"><span
+  class=SpellE>ImageAccess</span></a>&nbsp;input)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para pôr
+  uma sub-imagem com o canto esquerdo superior na coordenada (x,y).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:36'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23setConstant(double)&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>setConstant</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>double</span> <span
+  class=SpellE>constant</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  ajustar um valor constante a todos os <span class=SpellE>pixels</span> da
+  imagem.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:37'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#show(java.lang.String)"><span
+  class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>show</span></span></a></span></b></code><code><span
+  lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>(<span
+  class=SpellE>java.lang.String</span>&nbsp;title)</span></code><span
+  lang=EN-US style='mso-ansi-language:EN-US'><br>
+  <span class=SpellE>Mostra</span> <span class=SpellE>uma</span> <span
+  class=SpellE>imagem</span>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:38'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><code><span
+  lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>void</span></code><span
+  lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#show(java.lang.String, java.awt.Point)">show</a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>java</span>.<span class=SpellE>lang</span>.String&nbsp;<span
+  class=SpellE>title</span>, <span class=SpellE>java</span>.<span class=SpellE>awt</span>.<span
+  class=SpellE>Point</span>&nbsp;<span class=SpellE>loc</span>)</span></code><br>
+  Mostra uma imagem em uma posição específica (x, y).<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:39'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html%23sqrt()&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+  class=SpellE>sqrt</span></a></span></b></code><code><span style='font-size:
+  10.0pt'>()</span></code><br>
+  Computa a raiz quadrada de um <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:40'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#subtract(double)"><span
+  class=SpellE>subtract</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<span class=SpellE>double</span>&nbsp;<span
+  class=SpellE>constant</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para subtrair
+  uma constante a cada <span class=SpellE>pixel</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:41;mso-yfti-lastrow:yes'>
+  <td width="1%" valign=top style='width:1.0%;background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><span class=SpellE><code><span
+  style='font-size:10.0pt'>void</span></code></span><o:p></o:p></p>
+  </td>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><b><span style='font-size:10.0pt'><a
+  href="ImageAccess.html#subtract(ImageAccess, ImageAccess)"><span
+  class=SpellE>subtract</span></a></span></b></code><code><span
+  style='font-size:10.0pt'>(<a
+  href="ImageAccess.html"><span
+  class=SpellE>ImageAccess</span></a>&nbsp;<span class=SpellE>im1</span>, <a
+  href="ImageAccess.html"><span
+  class=SpellE>ImageAccess</span></a>&nbsp;<span class=SpellE>im2</span>)</span></code><br>
+  Um objeto de <span class=SpellE>ImageAccess</span> chama este método para
+  subtrair duas imagens <span class=SpellE>ImageAccess</span>.<o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p>&nbsp;<a name="methods_inherited_from_class_java.lang.O"><!-- --></a> <o:p></o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td style='background:#EEEEFF;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><b>Métodos herdados da classe <span class=SpellE><span
+  class=GramE>java</span></span>.<span class=SpellE><span class=GramE>lang</span></span>.<span
+  class=SpellE><span class=GramE>Object</span></span><span class=GramE> </span></b><o:p></o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;mso-yfti-lastrow:yes'>
+  <td style='background:white;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><code><span lang=EN-US style='font-size:10.0pt;mso-ansi-language:
+  EN-US'>clone, equals, finalize, <span class=SpellE>getClass</span>, <span
+  class=SpellE>hashCode</span>, notify, <span class=SpellE>notifyAll</span>, <span
+  class=SpellE>toString</span>, wait, wait, wait</span></code><span lang=EN-US
+  style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p><span lang=EN-US style='mso-ansi-language:EN-US'>&nbsp; <o:p></o:p></span></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='background:#CCCCFF;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><!-- ============ FIELD DETAIL =========== --><a
+  name="field_detail"><!-- --></a><b><span style='font-size:18.0pt'>Detalhes de
+  <span class=GramE>Campos </span></span></b><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="PATTERN_SQUARE_3x3"><!-- --></a><span class=SpellE>PATTERN_SQUARE_3x3</span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> static final <span class=SpellE>int</span> <b>PATTERN_SQUARE_3x3 </b><o:p></o:p></span></pre>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="PATTERN_CROSS_3x3"><!-- --></a><span class=SpellE>PATTERN_CROSS_3x3</span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> static final <span class=SpellE>int</span> <b>PATTERN_CROSS_3x3 </b><o:p></o:p></span></pre>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='background:#CCCCFF;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><a name="constructor_detail"><!-- --></a><b><span
+  style='font-size:18.0pt'><!-- ========= CONSTRUCTOR DETAIL ======== -->Detalhe
+  Do <span class=GramE>Construtor </span></span></b><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="ImageAccess(double[][])"><!-- --></a><span class=SpellE><span
+class=GramE>ImageAccess</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE><b>ImageAccess</b></span>(<span
+class=SpellE>double</span>[][]&nbsp;<span class=SpellE>array</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE>Cría</span> um
+objeto novo de <span class=SpellE><span class=GramE>ImageAccess</span></span>
+de uma matriz 2D de <span class=SpellE>double</span> dos <span class=SpellE>pixels</span>.
+O tamanho da matriz determina o tamanho da imagem. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>array</span></code></span></span>
+- uma matriz de <span class=SpellE>pixels</span> (2D)<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="ImageAccess(ij.process.ImageProcessor)"><!-- --></a><span
+class=SpellE><span class=GramE>ImageAccess</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE><b>ImageAccess</b></span>(<span
+class=SpellE>ij</span>.<span class=SpellE>process</span>.<span class=SpellE>ImageProcessor</span>&nbsp;<span
+class=SpellE>ip</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE>Cría</span> um
+objeto novo da classe <span class=SpellE><span class=GramE>ImageAccess</span></span>
+de um objeto <span class=SpellE>ImageProcessor</span>. O objeto <span
+class=SpellE><span class=GramE>ImageProcessor</span></span> contem os dados da
+imagem, o tamanho e o tipo da imagem. O <span class=SpellE><span class=GramE>ImageProcessor</span></span>
+está fornecido por <span class=SpellE>ImageJ</span>, ele se por um 8-bit,
+16-bit. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>IP</span></code> - um objeto de <span class=SpellE><span class=GramE>ImageProcessor</span></span>
+fornecido por <span class=SpellE>ImageJ</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="ImageAccess(ij.process.ColorProcessor,_i"><!-- --></a><span
+class=SpellE><span class=GramE>ImageAccess</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE><b>ImageAccess</b></span>(<span
+class=SpellE>ij</span>.<span class=SpellE>process</span>.<span class=SpellE>ColorProcessor</span>&nbsp;<span
+class=SpellE>cp</span>,<o:p></o:p></pre><pre><span style='mso-spacerun:yes'>                   </span><span
+class=GramE>int</span>&nbsp;<span class=SpellE>colorPlane</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE>Cría</span> um
+objeto novo da classe <span class=SpellE><span class=GramE>ImageAccess</span></span>
+de um objeto de <span class=SpellE>ColorProcessor</span>. O objeto de <span
+class=SpellE><span class=GramE>ImageProcessor</span></span> contem os dados da
+imagem, o tamanho e o tipo da imagem. O <span class=SpellE><span class=GramE>ColorProcessor</span></span>
+é fornecido por <span class=SpellE>ImageJ</span>, o <span class=SpellE>ImageAccess</span>
+contem um plano (vermelho, verde ou azul) selecionado com o parâmetro do <span
+class=SpellE>colorPlane</span>. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>PC</span></code> - um objeto de <span class=SpellE><span class=GramE>ColorProcessor</span></span>
+<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>colorPlane</span></code></span></span>
+- índice do plano de cor 0, 1 ou 2 <o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="ImageAccess(int,_int)"><!-- --></a><span class=SpellE><span
+class=GramE>ImageAccess</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE><b>ImageAccess</b></span>(int&nbsp;<span
+class=SpellE>nx</span>,<o:p></o:p></pre><pre><span style='mso-spacerun:yes'>                   </span><span
+class=GramE>int</span>&nbsp;ny)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE>Cría</span> um
+objeto novo da classe <span class=SpellE><span class=GramE>ImageAccess</span></span>.
+O tamanho da imagem é dado como o parâmetro. Os <span class=SpellE>pixels</span>
+dos dados estão vazios e não são <span class=SpellE>inicializados</span>. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>nx</span></code></span></span>
+- o tamanho da imagem ao longo do eixo x <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+style='font-size:10.0pt'>ny</span></code></span> - o tamanho da imagem ao longo
+do eixo y<o:p></o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:2.25pt 2.25pt 2.25pt 2.25pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'>
+  <td style='background:#CCCCFF;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><a name="method_detail"><!-- --></a><b><span
+  style='font-size:18.0pt'><!-- ============ METHOD DETAIL ========== -->Detalhe
+  de <span class=GramE>Métodos </span></span></b><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<h3><a name="getWidth()"><!-- --></a><span class=SpellE><span class=GramE>getWidth</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> int <span class=SpellE><b>getWidth</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Retorne a largura da imagem. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>a</span>
+largura da imagem<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getHeight()"><!-- --></a><span class=SpellE><span class=GramE>getHeight</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> int <span class=SpellE><b>getHeight</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Retorna a altura da imagem. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;tab-stops:108.6pt'><b>Retornos: <span
+style='mso-tab-count:1'>       </span></b><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>a</span> altura
+da imagem<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getMaximum()"><!-- --></a><span class=SpellE><span class=GramE>getMaximum</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE>double</span> <span
+class=SpellE><b>getMaximum</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Retorna o valor máximo de <span
+class=SpellE><span class=GramE>ImageAccess</span></span>. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>o</span> valor
+máximo<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getMinimum()"><!-- --></a><span class=SpellE><span class=GramE>getMinimum</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE>double</span> <span
+class=SpellE><b>getMinimum</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Retorna o valor mínimo de <span
+class=SpellE><span class=GramE>ImageAccess</span></span>. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>o</span> valor
+mínimo<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getMean()"><!-- --></a><span class=SpellE><span class=GramE>getMean</span></span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> double <span class=SpellE><b>getMean</b></span>()<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Retorna o valor médio de <span
+class=SpellE><span class=GramE>ImageAccess</span></span>. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>o</span> valor
+médio<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getArrayPixels()"><!-- --></a><span class=SpellE><span
+class=GramE>getArrayPixels</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE>double</span>[][] <span
+class=SpellE><b>getArrayPixels</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Retorna uma cópia dos dados do <span
+class=SpellE>pixel</span> organizados em uma matriz 2D. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>a</span> 2D
+disposição do <span class=SpellE>double</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getPixels()"><!-- --></a><span class=SpellE><span class=GramE>getPixels</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE>double</span>[] <span
+class=SpellE><b>getPixels</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Retorna uma referência aos dados
+dos <span class=SpellE>pixels</span> em <span class=SpellE>double</span> (1D). <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Vetor de <span class=SpellE>double</span>
+dos <span class=SpellE>pixels</span> em 1D<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="createFloatProcessor()"><!-- --></a><span class=SpellE><span
+class=GramE>createFloatProcessor</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE>ij</span>.<span
+class=SpellE><span class=GramE>process</span></span>.<span class=SpellE><span
+class=GramE>FloatProcessor</span></span> <span class=SpellE><b>createFloatProcessor</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Cria um <span class=SpellE><span
+class=GramE>FloatProcessor</span></span> dos dados do <span class=SpellE>pixel</span>.
+<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>o</span> <span
+class=SpellE>FloatProcessor</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="createByteProcessor()"><!-- --></a><span class=SpellE><span
+class=GramE>createByteProcessor</span></span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE><span
+class=GramE>public</span></span> <span class=SpellE>ij</span>.<span
+class=SpellE><span class=GramE>process</span></span>.<span class=SpellE><span
+class=GramE>ByteProcessor</span></span> <span class=SpellE><b>createByteProcessor</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Cria um <span class=SpellE><span
+class=GramE>ByteProcessor</span></span> dos dados do <span class=SpellE>pixel</span>.
+<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>o</span> <span
+class=SpellE>ByteProcessor</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="duplicate()"><!-- --></a><span class=SpellE>duplicate</span><o:p></o:p></h3>
+
+<pre><span style='mso-spacerun:yes'>  </span><span class=SpellE>public</span> <a
+href="ImageAccess.html"><span
+class=SpellE>ImageAccess</span></a> <span class=SpellE><b>duplicate</b></span>()<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Cria um objeto novo de <span
+class=SpellE><span class=GramE>ImageAccess</span></span> pela duplicação do objeto
+corrente de <span class=SpellE>ImageAccess</span>. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>um</span>
+objeto novo de <span class=SpellE>ImageAccess</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getPixel(int,_int)"><!-- --></a><span class=SpellE><span
+class=GramE>getPixel</span></span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> double <span class=SpellE><b>getPixel</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                       </span></span><span
+class=GramE>int</span>&nbsp;y)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto de <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar o nível
+cinzento de um <span class=SpellE>pixel</span> selecionado. As condições da
+beira do espelho são aplicadas. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span
+style='mso-spacerun:yes'> </span><span class=GramE>a</span> entrada<code><span
+style='font-size:10.0pt'> x</span></code>, o inteiro coordenada x de um <span
+class=SpellE>pixel</span> <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span
+style='mso-spacerun:yes'> </span><span class=GramE>a</span> entrada<code><span
+style='font-size:10.0pt'> y</span></code>, o inteiro coordenada y de um <span
+class=SpellE>pixel</span> <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>o</span> nível
+de cinza do <span class=SpellE>pixel</span> (<span class=SpellE>double</span>)<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getInterpolatedPixel(double,_double)"><!-- --></a><span
+class=SpellE><span class=GramE>getInterpolatedPixel</span></span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> double <span class=SpellE><b>getInterpolatedPixel</b></span>(double&nbsp;x,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                                   </span></span><span
+class=SpellE><span class=GramE>double</span></span>&nbsp;y)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto de <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar o nível de
+cinza de um <span class=SpellE>pixel</span> selecionado usando interpolação <span
+class=SpellE>bilinear</span>. As coordenadas devem ser dadas em <span
+class=SpellE>double</span> e a interpolação <span class=SpellE>bilinear</span>
+é aplicada para achar o nível de cinza. As condições <span class=GramE>da contorno</span>
+do espelho são aplicadas. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>a</span>
+entrada<code><span style='font-size:10.0pt'> x</span></code>, a coordenada <span
+class=SpellE>double</span> x de um <span class=SpellE>pixel</span> <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>a</span>
+entrada<code><span style='font-size:10.0pt'> y</span></code>, a coordena <span
+class=SpellE>double</span> y de um <span class=SpellE>pixel</span> <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Retornos: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE>o</span> nível de
+<span class=SpellE>cinzao</span> do <span class=SpellE>pixel</span> (<span
+class=SpellE>double</span>)<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getColumn(int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE>getColumn</span></span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> void <span class=SpellE><b>getColumn</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                      </span></span><span
+class=SpellE><span class=GramE>double</span></span>[]&nbsp;<span class=SpellE>column</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto de <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar uma coluna
+inteira da imagem. A coluna deve criada já com o tamanho correto [ny]. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>x</span></code> - a entrada, o inteiro <span class=SpellE>x-coordena</span>
+de uma <span class=GramE>coluna </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>column</span></code></span></span>
+- saída, uma disposição do <span class=SpellE>double</span> do tipo<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getColumn(int,_int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE>getColumn</span></span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> void <span class=SpellE><b>getColumn</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                      </span></span><span
+class=GramE>int</span>&nbsp;y,<o:p></o:p></pre><pre><span style='mso-spacerun:yes'>                      </span><span
+class=SpellE><span class=GramE>double</span></span>[]&nbsp;<span class=SpellE>column</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto de <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar uma parte
+da coluna. O ponto início é dado pelo parâmetro de y e o final determinado pelo
+tamanho do parâmetro <span class=SpellE>colunm</span>. O parâmetro <span
+class=SpellE>column</span> já deve estar criado. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>x</span></code> - entrada, o inteiro coordenada x de uma <span
+class=GramE>coluna </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>y</span></code> - entrada, ponto <span class=GramE>início </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>column</span></code></span></span>
+- saída, um vetor do tipo <span class=SpellE>double</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getRow(int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE>getRow</span></span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> void <span class=SpellE><b>getRow</b></span>(<span
+class=SpellE>int</span>&nbsp;y,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                   </span></span><span
+class=SpellE><span class=GramE>double</span></span>[]&nbsp;<span class=SpellE>row</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto de <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar uma linha
+inteira da imagem. A linha deve criado já com o tamanho correto <span
+class=GramE>[ <span class=SpellE>nx</span></span> ]. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>y</span></code> - a entrada, o inteiro coordenada y de uma <span
+class=GramE>linha </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>row</span></code></span></span>
+- saída, um vetor do tipo <span class=SpellE>double</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getRow(int,_int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE>getRow</span></span><o:p></o:p></h3>
+
+<pre><span lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>  </span><span
+class=GramE>public</span> void <span class=SpellE><b>getRow</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                   </span></span><span
+class=GramE>int</span>&nbsp;y,<o:p></o:p></pre><pre><span style='mso-spacerun:yes'>                   </span><span
+class=SpellE><span class=GramE>double</span></span>[]&nbsp;<span class=SpellE>row</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto de <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar uma parte
+da linha. O ponto início é dado pelo parâmetro de y e o fim determinado pelo
+tamanho do parâmetro <span class=SpellE>row</span>. O parâmetro <span
+class=SpellE>row</span> deve estar criado já. <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros: </b></span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>x</span></code> - entrada, ponto <span class=GramE>início </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>y</span></code> - a entrada, o inteiro coordenada y de uma <span
+class=GramE>linha </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>row</span></code></span></span>
+- saída, um vetor do tipo <span class=SpellE>double</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getNeighborhood(int,_int,_double[][])"><!-- --></a><span
+class=SpellE><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>getNeighborhood</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>getNeighborhood</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                            </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;y,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                            </span><span
+class=GramE>double[</span>][]&nbsp;neigh)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar uma
+vizinhança em torno da posição de um <span class=SpellE>pixel</span>. O parâmetro
+<span class=SpellE>neigh</span> já deve estar criado. O tamanho da matriz
+determina o tamanho da vizinhança. Condições de fronteiras reflexivas são
+aplicadas. <br>
+<br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x-n/2</span>,
+<span class=SpellE>y-n/2</span>) é colocado em <span class=SpellE>neigh</span><span
+class=GramE>[0</span>][0] <br>
+... <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+n/2</span>,
+<span class=SpellE>y+n/2</span>) é colocado em <span class=SpellE>neigh</span><span
+class=GramE>[n</span>-1][n-1] <br>
+<br>
+Por exemplo, se <span class=SpellE>neigh</span> é um <span class=SpellE>double</span>[4][4]:
+<br>
+O valor de <span class=SpellE>pixel</span> de (x-1, y-1) é colocado em <span
+class=SpellE>neigh</span>[0][0] <br>
+O valor de <span class=SpellE>pixel</span> de (x , y ) é colocado em <span
+class=SpellE>neigh</span>[1][1] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+1</span>, <span
+class=SpellE>y+1</span>) é colocado em <span class=SpellE>neigh</span>[2][2] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+2</span>, <span
+class=SpellE>y+2</span>) é colocado em <span class=SpellE>neigh</span>[3][3] <br>
+... <br>
+Por exemplo, se <span class=SpellE>neigh</span> é um <span class=SpellE>double</span><span
+class=GramE>[5</span>][5]: <br>
+O valor de <span class=SpellE>pixel</span> de (x-2, y-2) é colocado em <span
+class=SpellE>neigh</span>[0][0] <br>
+O valor de <span class=SpellE>pixel</span> de (x-1, y-1) é colocado em <span
+class=SpellE>neigh</span>[1][1] <br>
+O valor de <span class=SpellE>pixel</span> de (x , y ) é colocado em <span
+class=SpellE>neigh</span>[2][2] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+1</span>, <span
+class=SpellE>y+1</span>) é colocado em <span class=SpellE>neigh</span>[3][3] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+2</span>, <span
+class=SpellE>y+2</span>) é colocado em <span class=SpellE>neigh</span>[4][4] <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>x</span></code> - <span class=GramE>o inteiro coordenada x de um <span
+class=SpellE>pixel</span> central selecionado</span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>y</span></code> - <span class=GramE>o inteiro coordenada y de um <span
+class=SpellE>pixel</span> central selecionado</span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>neigh</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - output, a 2D array s<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getPattern(int,_int,_double[],_int)"><!-- --></a><span
+class=SpellE><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>getPattern</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>getPattern</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>               </span><span style='mso-spacerun:yes'>        </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;y,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                       </span><span
+class=GramE>double[</span>]&nbsp;neigh,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                       </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;pattern)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'>Um objeto <span class=SpellE><span
+class=GramE>ImageAccess</span></span> chama este método para acessar uma
+vizinhança de padrão definido em torno de um <span class=SpellE>pixel</span>
+selecionado (x,y). <br>
+Os padrões disponíveis são: <br>
+- um bloco 3*3: <span class=SpellE>PATTERN_SQUARE_3x3</span> (8-<span
+class=SpellE>connect</span>) <br>
+- uma cruz 3*3: <span class=SpellE>PATTERN_CROSS_3x3</span> (4-<span
+class=SpellE>connect</span>) <br>
+<br>
+Condições de fronteiras reflexivas são aplicadas. <br>
+Os <span class=SpellE>pixels</span> são arranjados em um vetor 1D, de acordo
+com as seguintes regras: <br>
+<br>
+Se o padrão é <span class=SpellE>PATTERN_SQUARE_3x3</span> (8-<span
+class=SpellE>connect</span>) <br>
+O valor de <span class=SpellE>pixel</span> de (x-1, y-1) é colocado em <span
+class=SpellE>neigh</span><span class=GramE>[0</span>] <br>
+O valor de <span class=SpellE>pixel</span> de (x , y-1) é colocado em <span
+class=SpellE>neigh</span>[1] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+1</span>,
+y-1) é colocado em <span class=SpellE>neigh</span>[2] <br>
+O valor de <span class=SpellE>pixel</span> de (x-1, y ) é colocado em <span
+class=SpellE>neigh</span>[3] <br>
+O valor de <span class=SpellE>pixel</span> de (x , y ) é colocado em <span
+class=SpellE>neigh</span>[4] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+1</span>, y
+) é colocado em <span class=SpellE>neigh</span>[5] <br>
+O valor de <span class=SpellE>pixel</span> de (x-1, <span class=SpellE>y+1</span>)
+é colocado em <span class=SpellE>neigh</span>[6] <br>
+O valor de <span class=SpellE>pixel</span> de (x , <span class=SpellE>y+1</span>)
+é colocado em <span class=SpellE>neigh</span>[7] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+1</span>, <span
+class=SpellE>y+1</span>) é colocado em <span class=SpellE>neigh</span>[8] <br>
+<br>
+Se o padrão é <span class=SpellE>PATTERN_CROSS_3x3</span> (4-<span
+class=SpellE>connect</span>) <br>
+O valor de <span class=SpellE>pixel</span> de (x , y-1) é colocado em <span
+class=SpellE>neigh</span>[0] <br>
+O valor de <span class=SpellE>pixel</span> de (x-1, y ) é colocado em <span
+class=SpellE>neigh</span>[1] <br>
+O valor de <span class=SpellE>pixel</span> de (x , y ) é colocado em <span
+class=SpellE>neigh</span>[2] <br>
+O valor de <span class=SpellE>pixel</span> de (<span class=SpellE>x+1</span>, y
+) é colocado em <span class=SpellE>neigh</span>[3] <br>
+O valor de <span class=SpellE>pixel</span> de (x , <span class=SpellE>y+1</span>)
+é colocado em <span class=SpellE>neigh</span>[4] <br>
+<br>
+O vetor <span class=SpellE>neigh</span> deve já estar criado como um vetor <span
+class=SpellE>double</span> de 9 elementos <span class=GramE>para</span> <span
+class=SpellE>PATTERN_SQUARE_3x3</span> ou 5 elementos para <span class=SpellE>PATTERN_CROSS_3x3</span>.
+<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><b>Parâmetros:</b>
+</span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>x</span></code> – coordenada x de um <span class=SpellE>pixel</span>
+central selecionado<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span style='font-size:
+10.0pt'>y</span></code> - coordenada y de um <span class=SpellE>pixel</span>
+central selecionado<o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>neigh</span></code></span></span>
+– <span class=SpellE>saida</span>, um vetor de 9 ou 5 elementos <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>pattern</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - PATTERN_SQUARE_3x3 <span
+class=SpellE>ou</span> PATTERN_CROSS_3x3.<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="getSubImage(int,_int,_ImageAccess)"><!-- --></a><span
+class=SpellE><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>getSubImage</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>getSubImage</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                        </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;y,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                        </span></span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;output)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method to get a sub-image with the upper left corner in the
+coordinate (<span class=SpellE>x<span class=GramE>,y</span></span>). The sub-image
+<span class=SpellE>ouptut</span> should be already created. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>x</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - x-coordinate in the source image <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>y</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - y-coordinate in the source image <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>output</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object with the sub-image;<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="putPixel(int,_int,_double)"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>putPixel</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>putPixel</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                     </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;y,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>        </span><span style='mso-spacerun:yes'>             </span><span
+class=GramE>double</span>&nbsp;value)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method in order a value of the gray level to be put to a position
+inside it given by the coordinates. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>x</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>,
+the integer x-coordinate of a pixel <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>y</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>,
+the integer y-coordinate of a pixel <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>value</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - input, a value of the gray level
+of the type double<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="putColumn(int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>putColumn</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>putColumn</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                      </span><span
+class=GramE>double[</span>]&nbsp;column)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method to put a whole column in a specified position into the image.
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>x</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>,
+the integer x-coordinate of a column <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>column</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - input, an array of the type
+double<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="putColumn(int,_int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>putColumn</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>putColumn</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       </span><span style='mso-spacerun:yes'>               </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;y,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                      </span><span
+class=GramE>double[</span>]&nbsp;column)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method to put a part of column into the image. The starting <span
+class=SpellE>poisition</span> in given by y and the ending position is
+determined by the size of the column array. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>x</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>,
+the integer x-coordinate of a column <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>y</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>,
+the integer y-coordinate of a column <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>column</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - input, an array of the type
+double<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="putRow(int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>putRow</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>putRow</b></span>(<span
+class=SpellE>int</span>&nbsp;y,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                   </span><span
+class=GramE>double[</span>]&nbsp;row)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method to put a whole row in a specified position into the image. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>y</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>,
+the integer x-coordinate of a column <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>row</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - input, an array of the type
+double<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="putRow(int,_int,_double[])"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>putRow</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>putRow</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                   </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;y,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                   </span><span
+class=GramE>double[</span>]&nbsp;row)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method to put a part of row into the image. The starting <span
+class=SpellE>poisition</span> in given by x and the ending position is
+determined by the size of the row array. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>x</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>,
+the integer x-coordinate of a column <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>y</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - <span class=GramE>input</span>, the
+integer y-coordinate of a column <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>row</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - input, an array of the type
+double<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="putArrayPixels(double[][])"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>putArrayPixels</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>putArrayPixels</b></span>(double[][]&nbsp;array)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method in order to put <span class=GramE>an</span> 2D array of
+double in an <span class=SpellE>ImageAccess</span>. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>array</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - input, the double array<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="putSubImage(int,_int,_ImageAccess)"><!-- --></a><span
+class=SpellE><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>putSubImage</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>putSubImage</b></span>(<span
+class=SpellE>int</span>&nbsp;x,<o:p></o:p></span></pre><pre><span lang=EN-US
+style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                        </span><span
+class=SpellE><span class=GramE>int</span></span>&nbsp;y,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                        </span></span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;input)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method to put a sub-image with the upper left corner in the
+coordinate (<span class=SpellE>x<span class=GramE>,y</span></span>). The
+sub-image input should be already created. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>x</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - x-coordinate in the source image <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>y</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - y-coordinate in the source image <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>input</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object that we want to put;<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="setConstant(double)"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>setConstant</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>setConstant</b></span>(double&nbsp;constant)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method to set a constant value to all pixels of the image. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><b>Parameters</b></span></span><span class=GramE><b>:</b> </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>constant</span></code></span></span>
+- a <span class=SpellE>constant</span> <span class=SpellE>value</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="normalizeContrast()"><!-- --></a><span class=SpellE><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>normalizeContrast</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>normalizeContrast</b></span>()<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>Stretches the contrast inside an
+image so that the gray levels are in the range 0 to 255.</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="show(java.lang.String,_java.awt.Point)"><!-- --></a><span
+class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>show</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>show</b>(<span
+class=SpellE>java.lang.String</span>&nbsp;title,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                 </span><span
+class=SpellE><span class=GramE>java.awt.Point</span></span>&nbsp;loc)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Display an image at a specific position (x, y).
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>title</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - a string for the title <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>loc</span></code></span></span>
+- <span class=SpellE>Point</span> for <span class=SpellE>the</span> <span
+class=SpellE>location</span><o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="show(java.lang.String)"><!-- --></a><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>show</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>show</b>(<span
+class=SpellE>java.lang.String</span>&nbsp;title)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Display an image. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>title</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - a string for the title of the
+window<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="abs()"><!-- --></a><span class=GramE><span lang=EN-US
+style='mso-ansi-language:EN-US'>abs</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>abs</b>()<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Compute the absolute value.<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="sqrt()"><!-- --></a><span class=SpellE><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>sqrt</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>sqrt</b></span>()<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Compute the square root of an <span
+class=SpellE>ImageAccess</span>.<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="pow(double)"><!-- --></a><span class=SpellE><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>pow</span></span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <span class=SpellE><b>pow</b></span>(double&nbsp;a)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Raised an <span class=SpellE>ImageAccess</span>
+object to the power a. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><b>Parameters</b></span></span><span class=GramE><b>:</b> </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+style='font-size:10.0pt'>a</span></code></span> - input<o:p></o:p></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="add(double)"><!-- --></a><span class=GramE><span lang=EN-US
+style='mso-ansi-language:EN-US'>add</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>add</b>(double&nbsp;constant)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for adding a constant to each pixel. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>constant</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - a constant to be added<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="multiply(double)"><!-- --></a><span class=GramE><span lang=EN-US
+style='mso-ansi-language:EN-US'>multiply</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>multiply</b>(double&nbsp;constant)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for multiplying a constant to each pixel. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>constant</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - a constant to be multiplied<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="subtract(double)"><!-- --></a><span class=GramE><span lang=EN-US
+style='mso-ansi-language:EN-US'>subtract</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>subtract</b>(double&nbsp;constant)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for adding a constant to each pixel. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>constant</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - a constant to be added<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="divide(double)"><!-- --></a><span class=GramE><span lang=EN-US
+style='mso-ansi-language:EN-US'>divide</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>divide</b>(double&nbsp;constant)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for dividing a constant to each pixel. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=GramE><code><span
+lang=EN-US style='font-size:10.0pt;mso-ansi-language:EN-US'>constant</span></code></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> - a constant to be multiplied<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="add(ImageAccess,_ImageAccess)"><!-- --></a><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>add</span></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>add</b>(</span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;im1,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                </span></span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;im2)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for adding two <span class=SpellE>ImageAccess</span> objects.
+[<span class=GramE>this</span> = im1 + im2] The resulting <span class=SpellE>ImageAccess</span>
+and the two operands should have the same size. <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>im1</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object to be added <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>im2</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object to be added<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="multiply(ImageAccess,_ImageAccess)"><!-- --></a><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>multiply</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>multiply</b>(</span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;im1,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                     </span></span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;im2)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for multiplying two <span class=SpellE>ImageAccess</span>
+objects. The resulting <span class=SpellE>ImageAccess</span> and the two
+operands should have the same size. [<span class=GramE>this</span> = im1 * im2]
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>im1</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object to be multiplied <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>im2</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object to be multiplied<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="subtract(ImageAccess,_ImageAccess)"><!-- --></a><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>subtract</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>subtract</b>(</span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;im1,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                     </span></span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;im2)<o:p></o:p></span></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for subtracting two <span class=SpellE>ImageAccess</span>
+objects. The resulting <span class=SpellE>ImageAccess</span> and the two
+operands should have the same size. [<span class=GramE>this</span> = im1 - im2]
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b><span lang=EN-US
+style='mso-ansi-language:EN-US'>Parameters:</span></b><span lang=EN-US
+style='mso-ansi-language:EN-US'> <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>im1</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object to be subtracted <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><code><span lang=EN-US
+style='font-size:10.0pt;mso-ansi-language:EN-US'>im2</span></code><span
+lang=EN-US style='mso-ansi-language:EN-US'> - an <span class=SpellE>ImageAccess</span>
+object to be subtracted<o:p></o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=2 width="100%" align=center>
+
+</div>
+
+<h3><a name="divide(ImageAccess,_ImageAccess)"><!-- --></a><span class=GramE><span
+lang=EN-US style='mso-ansi-language:EN-US'>divide</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></h3>
+
+<pre><span class=GramE><span lang=EN-US style='mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> void <b>divide</b>(</span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>ImageAccess</span></span></a><span
+lang=EN-US style='mso-ansi-language:EN-US'>&nbsp;im1,<o:p></o:p></span></pre><pre><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>                   </span></span><a
+href="ImageAccess.html&amp;prev=/search%3Fq%3Dimageaccess%26hl%3Dpt-BR%26lr%3D"><span
+class=SpellE>ImageAccess</span></a>&nbsp;<span class=SpellE>im2</span>)<o:p></o:p></pre>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='mso-ansi-language:EN-US'>An <span class=SpellE>ImageAccess</span> object
+calls this method for dividing two <span class=SpellE>ImageAccess</span>
+objects. [<span class=GramE>this</span> = im1 / im2] The resulting <span
+class=SpellE>ImageAccess</span> and the two operands should have the same size.
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><b>Parameters</b></span></span><span class=GramE><b>:</b> </span><o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>im1</span></code></span></span>
+- <span class=SpellE>numerator</span> <o:p></o:p></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span class=SpellE><span
+class=GramE><code><span style='font-size:10.0pt'>im2</span></code></span></span>
+- <span class=SpellE>denominator</span><o:p></o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<!-- ========= END OF CLASS DATA ========= --></div>
+
+</body>
+
+</html>
