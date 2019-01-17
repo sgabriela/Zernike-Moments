@@ -1,2 +1,2 @@
 # Zernike-Moments
-Implementation of Zernike Moments, which are image descriptors, in Java
+Implementation of the Zernike's Moments, which are image descriptors
